@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="../Scripts/angular.js"></script>
+        <script>
+            var app=angular.module("DemoApp",[]);
+            app.controller("HomeController",function($scope,$http){
+                $scope.Categories=[];
+                $http.get("http://127.0.0.1:8080/getCategories").then(function(response){
+                    $scope.Categories=response.data;
+                })
+            })
+        </script>
+    </head>
+    <body ng-app="DemoApp" ng-controller="HomeController">
+       <center>
+            <h2>Categorie Table</h2>
+        <div>
+            <table width="400" border="1" >
+                <th>Id</th>
+                <th>Name</th>
+                <tr ng-repeat="item in Categories" align="center">
+                    <td>{{item.categoryId}}</td>
+                    <td>{{item.categoryName}}</td>
+                </tr>
+            </table>
+        </div>
+       </center>
+    </body>
+</html>

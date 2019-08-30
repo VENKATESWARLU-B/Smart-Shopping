@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script src="../node_modules/jquery/dist/jquery.js"></script>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="../node_modules/angular/angular.js"></script>
+        <script>
+            var app=angular.module("DemoApp",[]);
+            app.controller("HomeController",function($scope,$http){
+                $scope.UserDetails=[];
+                $scope.get("http://127.0.0.1:8080/UserDetails").then(function(response){
+                    $scope.UserDetails=response.data;
+                })
+                $scope.txtName="";
+                $scope.txtPwd="";
+                $scope.Login=function(){
+                    for(var i=0; i<$scope.UserDetails.length; i++){
+                        if($scope.UserDetails[i].userName==$scope.txtName && $scope.UserDetails[i].password==$scope.txtPwd){
+                            location.href="screen.html";
+                        }else{
+                            location.href="error.html";
+                        }
+                    }
+                }
+            })
+        </script>    
+    </head>
+    <body ng-app="DemoApp" ng-controller="HomeController">
+        <div class="card border-secondary mb-3" style="max-width: 18rem;">
+            <div class="card-body text-secondary">
+              <fieldset>
+                  <legend>Login User</legend>
+                  <dl>
+                      <dt>User Name</dt>
+                      <dd><input type="text" ng-model="txtName" class="form-control"></dd>
+                      <dt>Password</dt>
+                      <dd><input type="password" ng-model="txtPwd" class="form-control"></dd>
+                  </dl>
+                  <br>
+                  <div align="center">
+                  <button ng-click="Login()" class="btn btn-primary">Login</button>&nbsp;&nbsp;
+                  New User:
+                    <a href="i-shopregister.html" class="btn btn-primary btn-sm">Register</a>
+                  </div> 
+              </fieldset>
+            </div>
+        </div>
+    </body>
+</html>

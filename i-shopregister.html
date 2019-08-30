@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+         .card-text dl dd{
+            width: 20rem;
+         }
+        </style>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script src="../node_modules/jquery/dist/jquery.js"></script>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="../node_modules/angular/angular.js"></script>
+        <script>
+            var app=angular.module("DemoApp",[]);
+            app.controller("RegisterController",function($scope,$http){
+                $scope.SubmitClick=function(user){
+                    $http.post("http://127.0.0.1:8080/RegisterUser",{userName:user.userName,password:user.password,email:user.email,city:user.city,state:user.state,pincode:user.pincode})
+                    location.href="success.html"
+                   
+                }
+            })
+        </script>
+    </head>
+    <body ng-app="DemoApp" ng-controller="RegisterController">
+        <form method="POST" ng-submit="SubmitClick(user)">
+            <div class="card text-black-50 bg-light mb-3" style="max-width: 30rem;">
+                <div class="card-body" >
+                    <h3 class="card-title">Registation Form</h3>
+                    <div class="card-text form-group" >
+                        <dl >
+                            <dt>UserName</dt>
+                            <dd><input type="text" name="userName" ng-model="user.userName" class="form-control"></dd>
+                            <dt>Password</dt>
+                            <dd><input type="password" name="password" ng-model="user.password" class="form-control"></dd>
+                            <dt>Email</dt>
+                            <dd><input type="email" name="email" ng-model="user.email" class="form-control"></dd>
+                            <dt>City</dt>
+                            <dd><input type="text" name="city" ng-model="user.city" class="form-control"></dd>
+                            <dt>State</dt>
+                            <dd><input type="text" name="state" ng-model="user.state" class="form-control"></dd>
+                            <dt>Pincode</dt>
+                            <dd><input type="text" name="pincode" ng-model="user.pincode" class="form-control"></dd> 
+                        </dl>
+                        <button class="btn btn-dark">Register</button>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+        </form>
+            
+    </body>
+</html>
