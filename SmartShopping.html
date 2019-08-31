@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="../node_modules/jquery/dist/jquery.js"></script>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="../node_modules/angular/angular.js"></script>
+        <script src="../node_modules/angular/angular-route.js"></script>
+        <script>
+            var app=angular.module("DemoApp",['ngRoute']);
+            app.config(function($routeProvider){
+                $routeProvider
+                .when("/Contact",{
+                    templateUrl:"contact.html"
+                })
+                .when("/Contact",{
+                    templateUrl:"Contact.html"
+                })
+                .when("/About",{
+                    templateUrl:"About.html"
+                })
+                
+                .when("/Login",{
+                    templateUrl:"i-shopLogin.html"
+                })
+                .when("/Register",{
+                    templateUrl:"i-shopregister.html"
+                })
+                .when("/Cart",{
+                    templateUrl:"cart.html"
+                })
+                .when("/products",{
+                    templateUrl:"product.html"
+                })
+            })
+            app.controller("HomeController",function($scope){
+            })
+        </script>
+    </head>
+    <body ng-app="DemoApp" ng-controller="HomeController">
+        <div class="main">
+            <div class="mainHeader navbar sticky-top">
+                <div>
+                <div class="headerImg"></div>
+                <div class="headerbar">
+                        <div >
+                            <ul class="nav justify-content-end ">
+                                <li>
+                                    <div class="input-group">
+                                                <input type="text" ng-model="search" class="form-control" placeholder="Search any Product or Category" aria-label="Search any Product or Category" aria-describedby="btnGroupAddon">
+                                                <div class="input-group-prepend">
+                                                  <input type="button" class="input-group-text" id="btnGroupAddon" value="Search">
+                                              </div>
+                                            </div>
+                                </li>&nbsp; &nbsp; 
+                                <li class="nav-item">
+                                    <a class="nav-link border-dark" href="#!Register">Register</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#!Login">Login</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#!Cart" style="color:white">
+                                                <img src="../images/cart.jpg">Cart
+                                        </a>
+                                        </li>
+                                        
+                            </ul>
+                        </div>
+                </div>
+                <!--Menu-->
+                <div class="headerbar1">
+                        <div>
+                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link " id="pills-category-tab" data-toggle="pill" href="#pills-category" role="tab" aria-controls="pills-category" aria-selected="true" >Categories</a>
+                                    </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link " id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="false">Home</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" id="pills-about-tab" data-toggle="pill" href="#!About" role="tab" aria-controls="pills-about" aria-selected="false" >About</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#!Contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
+                                        </li>
+                                      </ul>
+                                      <div class="tab-content" id="pills-tabContent">
+                                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"> </div>
+                                        <div class="tab-pane fade about1" id="pills-about" role="tabpanel" aria-labelledby="pills-about-tab"">. This agreement describes your rights and the conditions upon which you may use the Windows software. You should review the entire agreement, including any supplemental license terms that accompany the software and any linked terms, because all of the terms are important and together create this agreement that applies to you.</div>
+                                        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">This agreement describes your rights and the conditions upon which you may use the Windows software. You should review the entire agreement, including any supplemental license terms that accompany the software and any linked terms.</div>
+                                        <div class="tab-pane fade" id="pills-category" role="tabpanel" >
+                                            <fieldset>
+                                                <select ng-model="search.categoryId">
+                                                    <option value="1">Electronics</option>
+                                                    <option value="3">Footwear</option>
+                                                    <option value="4">Watches</option>
+                                                    <option value="5">Jewellerys</option>
+                                                    <option value="6">Trousers/Shirts</option>
+                                                </select>
+                                            </fieldset>
+                                        </div>
+                                      </div>
+                        </div>
+                    
+                </div>
+            </div>
+  
+                </div>
+                         <!-- Curousel-->
+        <div class="container" >
+            <div id="mycarousel" class="carousel slide" data-ride="carousel" >
+                <ul class="carousel-indicators">
+                    <li data-target="#mycarousel" data-side-to="0" class="active"></li>
+                    <li data-target="#mycarousel" data-side-to="1"></li>
+                    <li data-target="#mycarousel" data-side-to="2"></li>
+                    <li data-target="#mycarousel" data-side-to="3"></li>
+                    <li data-target="#mycarousel" data-side-to="4"></li>
+                    <li data-target="#mycarousel" data-side-to="5"></li>
+                    <li data-target="#mycarousel" data-side-to="6"></li>
+                </ul>
+                <div class="carousel-inner " >
+                    <div class="carousel-item active" >
+                        <img src="../Images/caro12.jpg" width="1100" height="300">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../Images/caros2.jpg" width="1100" height="300">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../Images/caro5.jpg" width="1100" height="300">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../Images/caro10.jpg" width="1100" height="300">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../Images/caro9.jpg" width="1100" height="300">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../Images/caro8.jpg" width="1100" height="300">
+                    </div>
+                </div>
+               <div>
+                <a class="carousel-control-prev" href="#mycarousel" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#mycarousel" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+               </div>
+            </div>
+            <div>
+            </div>
+        </div>
+        <div class="bodys" style="margin-top: 10px;">
+            <center>
+                <ng-view></ng-view>
+            </center>
+        </div>
+        <!--  Card Electronics -->
+        <div class="card electrical" style="width: 18rem;margin-left: 50px">
+            <div class="card-body">
+                <h5 class="card-title" align="center">Electronics</h5>
+              </div>
+              <div class="container">
+                <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../Images/sam.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="../Images/sam1.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/sam2.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/sam4.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/moto.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/moto1.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="../Images/moto2.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/moto3.jpg" width="250" height="200">
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div align="center">
+                  <a href="electronics.html" class="btn btn-primary btn-sm">Shop Now</a>
+                </div> 
+        </div>
+        <!-- End Card -->
+        <!--  Card Footwear -->
+        <div class="card footwear" style="width: 18rem; margin-right: 50px;margin-left: 50px">
+            <div class="card-body">
+                <h5 class="card-title" align="center">Footwears</h5>
+              </div>
+              <div class="container">
+                <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../Images/c1.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="../Images/c2.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/c3.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/c4.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/c5.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/c6.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="../Images/shoe.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/shoe1.jpg" width="250" height="200">
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div align="center">
+                  <a href="Footwear.html" class="btn btn-primary btn-sm">Shop Now</a>
+                </div> 
+        </div>
+        <!-- End Card -->
+        <!--  Card Jewellery -->
+        <div class="card jewellery" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title" align="center">Jewellerys</h5>
+              </div>
+              <div class="container">
+                <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../Images/ring.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="../Images/ring1.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/ring3.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/ring4.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/ring5.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/chain.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="../Images/chain2.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/chain3.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/ring6.jpg" width="250" height="200">
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div align="center">
+                  <a href="jewellery.html" class="btn btn-primary btn-sm">Shop Now</a>
+                </div> 
+        </div>
+        <!-- End Card -->
+        <!--  Card Watches -->
+        <div class="card watch" style="width: 18rem; margin-right: 50px;margin-left: 50px;margin-top:25px;">
+            <div class="card-body">
+                <h5 class="card-title" align="center">Watches</h5>
+              </div>
+              <div class="container">
+                <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../Images/fossil.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="../Images/fossil1.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/fossil2.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/fossil3.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/fast.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/fast1.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="../Images/fast2.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/fast3.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="../Images/fast4.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/rolax1.jpg" width="250" height="200">
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div align="center">
+                  <a href=".jpg" class="btn btn-primary btn-sm">Shop Now</a>
+                </div> 
+        </div>
+        <!-- End Card -->
+        <!--  Card Cloths -->
+        <div class="card cloth" style="width: 18rem;;margin-top:25px;margin-right: 50px;">
+            <div class="card-body">
+                <h5 class="card-title" align="center">Trousers/Shirts</h5>
+              </div>
+              <div class="container">
+                <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../Images/shirt.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="../Images/shirt1.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/shirt2.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/paint.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/paint1.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/paint2.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="../Images/paint3.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/paint4.jpg" width="250" height="200">
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div align="center">
+                  <a href=".jpg" class="btn btn-primary btn-sm">Shop Now</a>
+                </div> 
+        </div>
+        <!-- End Card -->
+         <!--  Card All -->
+         <div class="card" style="width: 18rem;margin-top:25px; ">
+            <div class="card-body">
+                <h5 class="card-title" align="center">All Categories</h5>
+              </div>
+              <div class="container">
+                <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../Images/sam2.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="../Images/shirt3.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/fast2.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/ring3.jpg" width="250" height="200">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/nike.jpeg" width="250" height="200">
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+                <div align="center">
+                  <a href="#" class="btn btn-primary btn-sm">Shop Now</a>
+                </div> 
+        </div>
+        <!-- End Card -->
+        
+        </div>
+    </body>
+</html>
+
+
+        
+  
